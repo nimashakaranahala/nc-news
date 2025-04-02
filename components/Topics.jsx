@@ -22,19 +22,20 @@ const Topics = () => {
   }, []);
 
   return (
-    <>
-      <h2 className="sub-heading">Topics</h2>
+    <div className="topics-container">
+      <h2>Topics</h2>
+
       {loading && <p>Hi I am Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <ul className="container">
+      <ul className="topics-list">
         {topics.map((topic, index) => (
-          <li key={index} className="category-card">
-            <strong>{topic.slug}</strong> 
-            {topic.img_url && <img src={topic.img_url} alt={topic.slug}/>}
+          <li key={index} className="topic-card">
+            <strong>{topic.slug}</strong>
+            {topic.img_url && <img src={topic.img_url} alt={topic.slug} />}
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 
